@@ -1,0 +1,8 @@
+env: "local"
+token_ttl: 4h
+storage:
+  driver: "postgres"
+  dsn: "./storage/sso.db"
+grpc:
+  port: "4444"
+  timeout: 4s
