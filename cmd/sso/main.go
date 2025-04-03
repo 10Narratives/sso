@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/10Narratives/sso/internal/app"
 	"github.com/10Narratives/sso/internal/config"
 	"github.com/10Narratives/sso/internal/lib/logger/sl"
 )
@@ -15,6 +16,10 @@ func main() {
 	log.Info("Starting application")
 
 	// TODO: Initialize application
+
+	application := app.New(log, cfg)
+
+	application.GRPCApp.MustRun()
 
 	// TODO: run gRPC-server
 	log.Info("Stopping application")
