@@ -19,6 +19,7 @@ func main() {
 
 	log.Info("starting application")
 	go application.GRPCApp.MustRun()
+	go application.DBApp.MustRun()
 
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGINT, syscall.SIGTERM)
@@ -26,6 +27,10 @@ func main() {
 	<-stop
 
 	log.Info("stopping application")
+
 	application.GRPCApp.Stop()
 	log.Info("grpc server stopped")
+
+	application.DBApp.Stop()
+	log.Info("working with database stopped")
 }
