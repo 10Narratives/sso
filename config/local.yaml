@@ -1,7 +1,7 @@
 env: "local"
 token_ttl: 4h
 storage:
-  driver: "postgres"
+  driver: "sqlite3"
   dsn: "./storage/sso.db"
 grpc:
   port: "4444"
