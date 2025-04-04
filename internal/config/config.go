@@ -25,7 +25,7 @@ type StorageConfig struct {
 
 // GRPCConfig defines the gRPC server-specific configuration.
 type GRPCConfig struct {
-	Port    int           `yaml:"driver" env-default:"4000"`
+	Port    int           `yaml:"port" env-default:"4000"`
 	Timeout time.Duration `yaml:"timeout" env-default:"10s"`
 }
 

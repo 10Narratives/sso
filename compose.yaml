@@ -1,0 +1,8 @@
+services:
+  sso:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    command: go run cmd/sso/main.go
