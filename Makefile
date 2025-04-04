@@ -18,6 +18,10 @@ clean:
 	rm -rf $(BUILD_DIR)
 	@echo "Cleaned."
 
+run:
+	@echo "Running..."
+	$(GO) run $(SRC_DIR)/main.go
+
 help:
 	@echo "Usage: make <target>"
 	@echo ""
